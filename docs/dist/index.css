@@ -667,6 +667,11 @@ video {
   inset: -0.25rem;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
 .end-1 {
   inset-inline-end: 0.25rem;
 }
