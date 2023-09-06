@@ -1,6 +1,4 @@
-import * as wasm from "how-many-days-huh";
 import { count_days } from "how-many-days-huh";
 
-wasm.greet(`Your name ${count_days()}`);
-
-console.log(count_days());
+const daysEl = document.getElementById("days");
+daysEl.innerText = `${count_days()} days left`;
