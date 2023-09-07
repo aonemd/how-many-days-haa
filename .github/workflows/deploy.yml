@@ -39,6 +39,9 @@ jobs:
     - name: NPM (including WASM) Build
       run: cd www && npm run build
 
+    - name: TAILWIND
+      run: cd www && npx tailwindcss -i ./index.css -o ./dist/index.css
+
     # - name: eslint
     #   run: cd www && npm run lint
 
