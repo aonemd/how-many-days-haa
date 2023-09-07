@@ -30,6 +30,9 @@ jobs:
       # so that the build of wasm-pack will be cached by rust-cache action.
       run: CARGO_TARGET_DIR=`pwd`/target cargo install wasm-pack
 
+    - name: Build WASM
+      run: wasm-pack build
+
     - name: NPM install (latest)
       run: cd www && npm install npm@latest
 
