@@ -36,6 +36,9 @@ jobs:
     # - name: Run Cargo tests
     #   run: cargo test --workspace
 
+    - name: NPM install (latest)
+      run: cd www && npm install
+
     - name: NPM (including WASM) Build
       run: cd www && npm run build
 
