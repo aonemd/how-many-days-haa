@@ -55,7 +55,7 @@ jobs:
     - name: Save wasm dist artifact
       uses: actions/upload-artifact@v3
       with:
-        name: wwww-dist
+        name: www-dist
         path: www/dist
         if-no-files-found: error
 
