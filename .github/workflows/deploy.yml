@@ -1,4 +1,4 @@
-name: WASM Build, Test, Deploy
+name: Build WASM 🦀 & Deploy to GH Pages
 
 permissions: {}
 
@@ -13,6 +13,7 @@ env:
 
 jobs:
   build:
+    name: Build 🏋️
     runs-on: ubuntu-latest
 
     steps:
@@ -60,6 +61,7 @@ jobs:
         if-no-files-found: error
 
   deploy:
+    name: Deploy ⚓️
     needs: build
     runs-on: ubuntu-latest
     permissions:
