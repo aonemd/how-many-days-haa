@@ -7,7 +7,9 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "tailwind-build": "npx tailwindcss -i ./index.css -o ./dist/index.css",
+    "tailwind-start": "npx tailwindcss -i ./index.css -o ./dist/index.css --watch"
   },
   "dependencies": {
     "how-many-days-haa": "file:../pkg"
