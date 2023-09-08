@@ -1,6 +1,7 @@
 mod utils;
 
 use chrono::{DateTime, Local};
+use rand::seq::SliceRandom;
 use wasm_bindgen::prelude::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -27,4 +28,20 @@ pub fn count_days() -> i64 {
     let duration = end.signed_duration_since(now);
 
     duration.num_days()
+}
+
+const IMAGES: &'static [&'static str] = &[
+    "bubu-dance.gif",
+    "bubu-dance-cool.gif",
+    "bubu-yier-hidden.gif",
+    "bubu-yier-dance.gif",
+    "bubu-yier-foood.gif",
+];
+
+#[wasm_bindgen]
+pub fn random_img() -> String {
+    let mut rng = rand::thread_rng();
+    let choice = IMAGES.choose(&mut rng).unwrap();
+
+    choice.to_string()
 }
