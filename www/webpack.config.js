@@ -8,10 +8,18 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "bootstrap.js",
   },
-  mode: "development",
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+    ],
+  },
   plugins: [
     new CopyWebpackPlugin(['index.html', 'static'])
   ],
+  mode: "development",
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
