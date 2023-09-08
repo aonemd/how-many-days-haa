@@ -23,7 +23,9 @@ pub fn greet(name: &str) {
 #[wasm_bindgen]
 pub fn count_days() -> i64 {
     let now = Local::now();
-    let end = DateTime::parse_from_str("2023 Oct 25 00:00:00.000 +0200", "%Y %b %d %H:%M:%S%.3f %z").unwrap_or_default();
+    let end =
+        DateTime::parse_from_str("2023 Oct 25 00:00:00.000 +0200", "%Y %b %d %H:%M:%S%.3f %z")
+            .unwrap_or_default();
 
     let duration = end.signed_duration_since(now);
 
